@@ -1,5 +1,6 @@
 const btn_op1 = document.getElementById("op-tasa-1");
 const calcular = document.getElementById("calcular"); 
+ 
 
 
 
@@ -176,9 +177,201 @@ calcular.addEventListener("click",(e) =>{
                   
                   }
 
-      document.getElementById("resultado").innerHTML = resultado*100; 
+      document.getElementById("resultado").innerHTML = resultado*100+"% "+lista2; 
       e.preventDefault();
 });
+
+
+  calcular.addEventListener("click",(e) =>{
+    let tasa_n = document.getElementById("tasa-n").value;
+    let porcentaje = parseFloat(tasa_n)/100.0;
+    let lista1 = document.getElementById("lista1").value;
+    let lista2 = document.getElementById("lista2").value;
+    let resultado;
+    let Año=1;
+    let Mensual=12;
+    let Bimestre=6;
+    let Trimestre=4;
+    let Semestre=2;
+    let Anual=1;
+    let resultado1;
+    let resultado2;
+    let resultado3;
+
+  //Mes
+    //MV-BV
+    if(lista1 == "MV" && lista2 == "BV"){
+      resultado1= porcentaje/Mensual
+        resultado2 = Math.pow(1+(resultado1),Mensual/Bimestre)
+        resultado3= resultado2*Bimestre
+        resultado=(resultado3)
+    }
+      //MV-TV
+      if(lista1 == "MV" && lista2 == "TV"){
+        resultado1= porcentaje/Mensual
+        resultado2 = Math.pow(1+(resultado1),Mensual/Trimestre)
+        resultado3= resultado2*Trimestre
+        resultado=(resultado3)
+        }
+      //MV-SV
+      else if(lista1 == "MV" && lista2 == "SV"){
+        resultado1= porcentaje/Mensual
+        resultado2 = Math.pow(1+(resultado1),Mensual/Semestre)
+        resultado3= resultado2*Semestre
+        resultado=(resultado3)
+        }
+      //MV-AV
+      else if(lista1 == "MV" && lista2 == "AV"){
+        resultado1= porcentaje/Mensual
+        resultado2 = Math.pow(1+(resultado1),Mensual/Anual)
+        resultado3= resultado2*Anual
+        resultado=(resultado3)
+        }
+      //Mes Vencido a Efectivo Anua
+      else if(lista1 == "MV" && lista2 == "MV"){
+         resultado = porcentaje
+        }
+
+
+    //Bimestre
+    //Bimestre Vencido a Efectivo Mensual
+    if(lista1 == "BV" && lista2 == "MV"){
+      resultado1= porcentaje/Bimestre
+        resultado2 = Math.pow(1+(resultado1),Bimestre/Mensual)
+        resultado3= resultado2*Mensual
+        resultado=(resultado3)
+    }
+      //Bimestre Vencido a Efectivo Bimestral
+      if(lista1 == "BV" && lista2 == "TV"){
+        resultado1= porcentaje/Bimestre
+        resultado2 = Math.pow(1+(resultado1),Bimestre/Trimestre)
+        resultado3= resultado2*Trimestre
+        resultado=(resultado3)
+        }
+      //Bimestre Vencido a Efectivo Trimestral
+      else if(lista1 == "BV" && lista2 == "SV"){
+        resultado1= porcentaje/Bimestre
+        resultado2 = Math.pow(1+(resultado1),Bimestre/Semestre)
+        resultado3= resultado2*Semestre
+        resultado=(resultado3)
+        }
+      //Bimestre Vencido a Efectivo Semestral
+      else if(lista1 == "BV" && lista2 == "AV"){
+        resultado1= porcentaje/Bimestre
+        resultado2 = Math.pow(1+(resultado1),Bimestre/Anual)
+        resultado3= resultado2*Anual
+        resultado=(resultado3)
+        }
+      //Bimestre Vencido a Efectivo Anual
+      else if(lista1 == "BV" && lista2 == "BV"){
+        resultado = porcentaje
+        }
+
+    //Trimestre
+    //Trimestre Vencido a Efectivo Mensual
+    if(lista1 == "TV" && lista2 == "MV"){
+      resultado1= porcentaje/Trimestre
+        resultado2 = Math.pow(1+(resultado1),Trimestre/Mensual)
+        resultado3= resultado2*Mensual
+        resultado=(resultado3)
+    }
+      //Trimestre Vencido a Efectivo Bimestral
+      if(lista1 == "TV" && lista2 == "BV"){
+        resultado1= porcentaje/Trimestre
+        resultado2 = Math.pow(1+(resultado1),Trimestre/Bimestre)
+        resultado3= resultado2*Bimestre
+        resultado=(resultado3)
+        }
+      //Trimestre Vencido a Efectivo Trimestral
+      else if(lista1 == "TV" && lista2 == "SV"){
+        resultado1= porcentaje/Trimestre
+        resultado2 = Math.pow(1+(resultado1),Trimestre/Semestre)
+        resultado3= resultado2*Semestre
+        resultado=(resultado3)
+        }
+      //Trimestre Vencido a Efectivo Semestral
+      else if(lista1 == "TV" && lista2 == "AV"){
+        resultado1= porcentaje/Trimestre
+        resultado2 = Math.pow(1+(resultado1),Trimestre/Anual)
+        resultado3= resultado2*Anual
+        resultado=(resultado3)
+        }
+      //Trimestre Vencido a Efectivo Anual
+      else if(lista1 == "TV" && lista2 == "TV"){
+        resultado = porcentaje
+        }
+
+    //Semestre
+    //Semestre Vencido a Efectivo Mensual
+    if(lista1 == "SV" && lista2 == "MV"){
+      resultado1= porcentaje/Semestre
+        resultado2 = Math.pow(1+(resultado1),Semestre/Mensual)
+        resultado3= resultado2*Mensual
+        resultado=(resultado3)
+    }
+      //Semestre Vencido a Efectivo Bimestral
+      if(lista1 == "SV" && lista2 == "BV"){
+        resultado1= porcentaje/Semestre
+        resultado2 = Math.pow(1+(resultado1),Semestre/Bimestre)
+        resultado3= resultado2*Bimestre
+        resultado=(resultado3)
+        }
+      //Semestre Vencido a Efectivo Trimestral
+      else if(lista1 == "SV" && lista2 == "TV"){
+        resultado1= porcentaje/Semestre
+        resultado2 = Math.pow(1+(resultado1),Semestre/Trimestre)
+        resultado3= resultado2*Trimestre
+        resultado=(resultado3)
+        }
+      //Semestre Vencido a Efectivo Semestral
+      else if(lista1 == "SV" && lista2 == "AV"){
+        resultado1= porcentaje/Semestre
+        resultado2 = Math.pow(1+(resultado1),Semestre/Anual)
+        resultado3= resultado2*Anual
+        resultado=(resultado3)
+        }
+      //Semestre Vencido a Efectivo Anual
+      else if(lista1 == "SV" && lista2 == "SV"){
+        resultado = porcentaje
+        }
+
+    //Año
+    //Año Vencido a Efectivo Mensual
+    if(lista1 == "AV" && lista2 == "MV"){
+      resultado1= porcentaje/Anual
+        resultado2 = Math.pow(1+(resultado1),Anual/Mensual)
+        resultado3= resultado2*Mensual
+        resultado=(resultado3)
+    }
+      //Año Vencido a Efectivo Bimestral
+      if(lista1 == "AV" && lista2 == "BV"){
+        resultado1= porcentaje/Anual
+        resultado2 = Math.pow(1+(resultado1),Anual/Bimestre)
+        resultado3= resultado2*Bimestre
+        resultado=(resultado3)
+        }
+      //Año Vencido a Efectivo Trimestral
+      else if(lista1 == "AV" && lista2 == "TV"){
+        resultado1= porcentaje/Anual
+        resultado2 = Math.pow(1+(resultado1),Anual/Trimestre)
+        resultado3= resultado2*Trimestre
+        resultado=(resultado3)
+        }
+      //Año Vencido a Efectivo Semestral
+      else if(lista1 == "AV" && lista2 == "SV"){
+        resultado1= porcentaje/Anual
+        resultado2 = Math.pow(1+(resultado1),Anual/Semestre)
+        resultado3= resultado2*Semestre
+        resultado=(resultado3)
+        }
+      //Año Vencido a Efectivo Anual
+      else if(lista1 == "AV" && lista2 == "AV"){
+        resultado = porcentaje
+        }
+
+      document.getElementById("resultado").innerHTML = resultado.toFixed(3)*100+"% "+lista2; 
+      e.preventDefault();
+  });
 
 function Maximo (obj){
     if(obj.value.length > obj.maxLength){
