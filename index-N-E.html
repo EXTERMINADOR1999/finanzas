@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <!-- <input type="number" step=00.1 step=0.1 id=""> -->
+<div class="jumbotron outline-dark">
+      <div class="page-header p-3 my-3">
+    <h2>Conversor de Tasa Nominal a Nominal</h2>
+  </div>
+</div>
+
+<div class="container">
+  <form>   
+      <div class="col-md-8">
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">Datos Iniciales</th>
+              <th scope="col">Tasa</th>
+              <th scope="col">Tipo de Tasa Efectiva</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Tasa Efectiva Inicial</th>
+              <td>
+                    <input 
+                    type="number" 
+                    id="tasa-n" 
+                    step=00.1 
+                    step=0.1 
+                    placeholder ="%" 
+                    class="form-control" maxlength="4" oninput="Maximo(this);">
+              </td>
+              <td>
+                  <div class="form-group">
+                      <select class="form-control" id="lista1">
+                        <option id="op-tasa-1">MV</option>
+                        <option id="op-tasa-2">BV</option>
+                        <option id="op-tasa-3">TV</option>
+                        <option id="op-tasa-4">SV</option>
+                        <option id="op-tasa-5">AV</option>
+                        <!-- <option id="op-tasa-6">Anual</option> -->
+                      </select>
+                    </div>      
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  <div class="col-md-8">
+    <div class="form-group">
+      <label for="sel1" >Convertir en:</label>
+      <select id ="lista2" class="form-control">
+        <option id="op-1">MV</option>
+        <option id="op-1">BV</option>
+        <option id="op-3">TV</option>
+        <option id="op-4">SV</option>
+        <option id="op-2">AV</option>
+        <!-- <option id="op-2">Anual</option> -->
+      </select>
+    </div>
+    <!-- <input class="btn btn-primary" type="submit" value="Submit"> -->
+
+  </div>
+  <div class="row">
+  <div class="col-md-8 ">
+      <input type="submit" class="btn btn-dark btn-block" id="calcular" value="Calcular">
+  </div>
+</div>
+<br>
+  <div class="row">
+    <div class="col-md-8 ">
+        <!-- <div class="">
+            <p class="bg-primary text-white" id ="resultado"></p>
+          </div> -->
+
+          <div class="container p-3 my-3 bg-dark text-white">
+              <h3>El resultado es:</h3>
+              <p id="resultado"> </p>
+            </div>
+      </div>
+  </div>
+
+  </form>  
+
+ 
+</div>
+<script src ="js/functions.js"></script>
+
+</body>
+
+</html>
