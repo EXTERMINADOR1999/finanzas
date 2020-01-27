@@ -517,7 +517,7 @@ calcular.addEventListener("click",(e) =>{
         resultado3= resultado2*Trimestre
         
         resultado=(resultado3)
-        alert(resultado3)
+        
         }
       //Semestre Vencido a Efectivo Semestral
       else if(lista1 == "SV" && lista2 == "AV"){
